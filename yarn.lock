@@ -7738,6 +7738,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-native-app-template@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "react-native-app-template@workspace:."
+  dependencies:
+    "@babel/core": ^7.20.0
+    "@babel/preset-env": ^7.20.0
+    "@babel/runtime": ^7.20.0
+    "@react-native/babel-preset": 0.75.4
+    "@react-native/eslint-config": 0.75.4
+    "@react-native/metro-config": 0.75.4
+    "@react-native/typescript-config": 0.75.4
+    "@types/react": ^18.2.6
+    "@types/react-test-renderer": ^18.0.0
+    babel-jest: ^29.6.3
+    eslint: ^8.19.0
+    jest: ^29.6.3
+    prettier: 2.8.8
+    react: 18.3.1
+    react-native: 0.75.4
+    react-test-renderer: 18.3.1
+    typescript: 5.0.4
+  languageName: unknown
+  linkType: soft
+
 "react-native@npm:0.75.4":
   version: 0.75.4
   resolution: "react-native@npm:0.75.4"
@@ -8785,30 +8809,6 @@ __metadata:
   checksum: 3b34a3d77165a2cb82b34014b3aba93b1c4637a5011807557dc2f3da826c59975a5ccad765721c4648b39817e3472789f9b0fa98fc854c5c1c7a1e632aacdc28
   languageName: node
   linkType: hard
-
-"test@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "test@workspace:."
-  dependencies:
-    "@babel/core": ^7.20.0
-    "@babel/preset-env": ^7.20.0
-    "@babel/runtime": ^7.20.0
-    "@react-native/babel-preset": 0.75.4
-    "@react-native/eslint-config": 0.75.4
-    "@react-native/metro-config": 0.75.4
-    "@react-native/typescript-config": 0.75.4
-    "@types/react": ^18.2.6
-    "@types/react-test-renderer": ^18.0.0
-    babel-jest: ^29.6.3
-    eslint: ^8.19.0
-    jest: ^29.6.3
-    prettier: 2.8.8
-    react: 18.3.1
-    react-native: 0.75.4
-    react-test-renderer: 18.3.1
-    typescript: 5.0.4
-  languageName: unknown
-  linkType: soft
 
 "text-table@npm:^0.2.0":
   version: 0.2.0

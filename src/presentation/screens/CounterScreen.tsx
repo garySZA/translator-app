@@ -9,7 +9,8 @@ export const CounterScreen = () => {
 
     return (
         <View style={ globalStyles.centerContainer }>
-            <Text style={ styles.title }>Template App</Text>
+            <Text style={ styles.title }>Chojro App</Text>
+            <Text style={ styles.title }>v1.0</Text>
             <Text style={ globalStyles.title }>{ counter }</Text>
 
             <FAB

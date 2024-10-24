@@ -1,4 +1,4 @@
-package com.test
+package com.chojroapp.translator
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate

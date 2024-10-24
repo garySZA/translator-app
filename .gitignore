@@ -2,6 +2,10 @@
 #
 .DS_Store
 
+
+android/debug.keystore
+
+
 # Xcode
 #
 build/

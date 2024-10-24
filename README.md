@@ -4,12 +4,12 @@
   </a>
 </p>
 
-# React Native App - Template
+# Translator App
 
 ## Ejecución
 1. Clonar del repositorio
 ```
-   git clone https://github.com/garySZA/react-native-app-template.git
+   git clone https://github.com/garySZA/translator-app.git
 ```
 2. Instalar dependencias
 ```
@@ -24,6 +24,7 @@ npx @react-native-community/cli doctor
 > [!NOTE]
 >
 > El diagnóstico no debe presentar ningún tipo de error
+
 5. Ejecutar la aplicación para Android
 ```
 yarn start:android

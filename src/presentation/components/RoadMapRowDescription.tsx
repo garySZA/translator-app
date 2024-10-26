@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { colors } from '../theme';
 
 interface Props {
     description: string;
@@ -21,6 +22,6 @@ const styles = StyleSheet.create({
 
     textDescription: {
         marginLeft: 10,
-        color: 'gray',
+        color: colors.textSecondary,
     },
 });

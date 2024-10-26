@@ -1,16 +1,35 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StyleSheet, ToastAndroid, View } from 'react-native';
 
-import { LessonActions, LessonDescription, LessonOptions } from '../components';
-import { lessonOneNumbers } from '../../helpers/data/index';
-import { useStorage } from '../../hooks';
 import { Text } from 'react-native-paper';
+import { RouteProp, StackActions, useRoute } from '@react-navigation/native';
 
-
-const lesson = lessonOneNumbers;
+import { colors } from '../theme';
+import { LessonActions, LessonDescription, LessonOptions } from '../components';
+import { lessonsList } from '../../helpers/data';
+import { RootStackParams } from '../router';
+import { useNavigator, useStorage } from '../../hooks';
+import { resetOptions } from '../../helpers';
 
 export const LessonScreen = () => {
-    const { getData } = useStorage();
+    const { getData, clearField } = useStorage();
+    const { navigation } = useNavigator();
+    const params = useRoute<RouteProp<RootStackParams, 'Lesson'>>().params;
+    const lesson = params.lesson;
+
+    // TODO: REVISAR
+
+    useEffect(() => {
+        lesson.options = resetOptions( lesson.options );
+    }, [lesson, lesson.options]);
+
+
+    useEffect(() => {
+        navigation.setOptions({
+            title: `${params.name} - ${ params.stepTitle }`,
+        });
+    }, [navigation, params.name, params.stepTitle]);
+
 
     const showToast = (message: string) => {
         ToastAndroid.showWithGravity(message, ToastAndroid.SHORT, ToastAndroid.TOP);
@@ -22,6 +41,24 @@ export const LessonScreen = () => {
         if( lesson.correctAnswer.id === +optionSelected! ){
 
             showToast('Muy Bien! respuesta correcta');
+            clearField('optionSelected');
+
+            if( params.step < 10 ) {
+                setTimeout( () => {
+                    navigation.navigate('Lesson',
+                        {
+                            lessonId: params.lessonId + 1,
+                            name: params.name,
+                            step: params.step + 1,
+                            stepTitle: params.stepTitle,
+                            lesson: lessonsList[params.lessonId + 1],
+                        });
+                }, 1700 );
+
+            } else {
+                onGoToHome();
+            }
+
         } else {
             showToast('Error, respuesta incorrecta');
         }
@@ -32,9 +69,13 @@ export const LessonScreen = () => {
         showToast(`Tal vez la respuesta sea ${ lesson.correctAnswer.label }`);
     };
 
+    const onGoToHome = () => {
+        navigation.dispatch( StackActions.popToTop() );
+    };
+
     return (
         <View style={ styles.container }>
-            <Text 
+            <Text
                 variant="headlineSmall"
                 style={ styles.lessonTitle }
             >
@@ -53,6 +94,7 @@ export const LessonScreen = () => {
                 <LessonActions
                     onSubmit={ onSubmit }
                     onHelp={ onHelp }
+                    onGoToHome={ onGoToHome }
                 />
             </View>
         </View>
@@ -67,7 +109,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         rowGap: 40,
 
-        backgroundColor: '#f5f5f5',
+        backgroundColor: colors.secondaryBackground,
         padding: 20,
     },
 
@@ -83,7 +125,7 @@ const styles = StyleSheet.create({
     },
 
     lessonTitle: {
-        color: '#6A3DE8',
+        color: colors.textPrimary,
         fontWeight: 'bold',
         fontStyle: 'italic',
     },

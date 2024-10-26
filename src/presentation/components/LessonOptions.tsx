@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { LessonOption } from './LessonOption';
 import { Option } from '../../interfaces';
@@ -9,8 +9,15 @@ interface Props {
 }
 
 export const LessonOptions = ({ optionsList }: Props) => {
+    // console.log(optionsList, 'nuevas opciones');
+
     const [options, setOptions] = useState(optionsList);
     const { storeData } = useStorage();
+
+    useEffect(() => {
+        setOptions(optionsList);
+    }, [optionsList]);
+
 
     const onSelected = (id: number, selected: boolean) => {
 

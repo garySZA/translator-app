@@ -21,9 +21,14 @@ export const useStorage = () => {
         }
     };
 
+    const clearField = async ( key: string ) => {
+        await storeData(key, '');
+    };
+
     return {
         //* Props
         //* Methods
+        clearField,
         getData,
         storeData,
     };

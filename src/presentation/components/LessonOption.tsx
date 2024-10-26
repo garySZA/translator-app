@@ -1,5 +1,7 @@
 import React from 'react';
 import { Chip } from 'react-native-paper';
+import { colors, commonColors } from '../theme';
+import { StyleSheet } from 'react-native';
 
 interface Props {
     id: number;
@@ -12,14 +14,30 @@ export const LessonOption = ({ id, label, selected = false, onSelected }: Props)
     return (
         <Chip
             compact={true}
-            mode={ selected ? 'flat' : 'outlined' }
-            selectedColor="#6A3DE8"
+            mode="outlined"
+            selectedColor={ selected ? commonColors.white : colors.textPrimary }
+            style={ [styles.chip, selected && styles.selectedChip] }
             onPress={ () => onSelected(id, selected) }
             selected={ selected }
             showSelectedCheck={false}
-            elevated={ selected ? true : false }
+            textStyle= { styles.text }
         >
             { label }
         </Chip>
     );
 };
+
+const styles = StyleSheet.create({
+    chip: {
+        backgroundColor: colors.secondaryBackground,
+    },
+
+    text: {
+        fontSize: 15,
+    },
+
+    selectedChip: {
+        backgroundColor: colors.primary,
+        color: commonColors.white,
+    },
+});

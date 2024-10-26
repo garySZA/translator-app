@@ -1,37 +1,31 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
-import { Button } from 'react-native-paper';
+import { PrimaryButton } from './shared';
 
 interface Props {
     onSubmit: () => void;
     onHelp: () => void;
+    onGoToHome: () => void;
 }
 
-export const LessonActions = ({ onSubmit, onHelp }: Props) => {
+export const LessonActions = ({ onSubmit, onHelp, onGoToHome }: Props) => {
 
     return (
         <>
-            <Button
-                mode="contained-tonal"
-                textColor="#6A3DE8"
+            <PrimaryButton
+                label="Comprobar"
                 onPress={ onSubmit }
-            >
-                Comprobar
-            </Button>
-            <Button
-                mode="text"
-                textColor="#6A3DE8"
-                style={ styles.helpButton }
+                type="primary"
+            />
+            <PrimaryButton
+                label="Ayuda"
                 onPress={ onHelp }
-            >
-                Ayuda
-            </Button>
+                type="secondary"
+            />
+            <PrimaryButton
+                label="Salir"
+                onPress={ onGoToHome }
+                type="tertiary"
+            />
         </>
     );
 };
-
-const styles = StyleSheet.create({
-    helpButton: {
-        marginTop: 10,
-    },
-});

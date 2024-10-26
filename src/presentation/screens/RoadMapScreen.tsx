@@ -4,7 +4,9 @@ import { StyleSheet } from 'react-native';
 import Timeline from 'react-native-timeline-flatlist';
 
 import { RoadMapRow } from '../components';
-import { roadmapList } from '../../helpers';
+import { lessonsList, roadmapList } from '../../helpers';
+import { useNavigator } from '../../hooks';
+import { colors } from '../theme';
 
 const renderDetail = (rowData: any ) => {
     return (
@@ -13,19 +15,32 @@ const renderDetail = (rowData: any ) => {
             description={ rowData.description }
         />
     );
+
 };
 
+
+
 export const RoadMapScreen = () => {
-    const handleClick = (data : any) => {
-        console.log(data, 'evnt');
+    const { navigation } = useNavigator();
+
+    const handleClick = (data: any ) => {
+
+        navigation.navigate('Lesson',
+            {
+                lessonId: 0,
+                name: data.title,
+                step: 1,
+                stepTitle: 'El número 10',
+                lesson: lessonsList[0],
+            });
     };
 
     return (
         <Timeline
-            circleColor="#6A3DE8"
-            lineColor="#6A3DE8"
+            circleColor={ colors.primary }
+            lineColor={ colors.tertiary }
             timeStyle={ styles.timeStyle }
-            circleSize={30}
+            circleSize={20}
             innerCircle="dot"
             timeContainerStyle={ styles.timeContainer }
             rowContainerStyle={ styles.rowContainer }
@@ -43,13 +58,12 @@ export const RoadMapScreen = () => {
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 10,
+        paddingTop: 10,
+        backgroundColor: colors.secondaryBackground,
     },
 
     timeStyle: {
         textAlign: 'center',
-        backgroundColor:'#6A3DE8',
-        color:'white',
         padding:5,
         borderRadius:13,
     },
@@ -65,12 +79,12 @@ const styles = StyleSheet.create({
 
     circle: {
         position: 'absolute',
-        left: 6,
+        left: 10,
         top: 0,
     },
 
     separator: {
-        backgroundColor: '#6a3DE8',
+        backgroundColor: colors.tertiary,
     },
 
     row: {

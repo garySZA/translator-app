@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Avatar, Text } from 'react-native-paper';
+import { colors, commonColors } from '../theme';
 
 interface Props {
     avatarLabel: string;
@@ -11,11 +12,25 @@ interface Props {
 export const LessonDescription = ({ avatarLabel, lessonTitle }: Props) => {
     return (
         <>
-            <Avatar.Text
-                size={ 90 }
-                label={ avatarLabel }
-                style={ styles.lessonAvatar }
-            />
+            {
+                avatarLabel === 'null'
+                ? (
+                    <Avatar.Icon
+                        size={ 90 }
+                        icon="help-outline"
+                        style={ styles.lessonAvatar }
+                        color={ commonColors.white }
+                    />
+                )
+                : (
+                    <Avatar.Text
+                        size={ 90 }
+                        label={ avatarLabel }
+                        style={ styles.lessonAvatar }
+                        color={ commonColors.white }
+                    />
+                )
+            }
             <Text
                 variant="titleLarge"
                 style={ styles.lessonTitle }
@@ -28,12 +43,13 @@ export const LessonDescription = ({ avatarLabel, lessonTitle }: Props) => {
 
 const styles = StyleSheet.create({
     lessonAvatar: {
+        backgroundColor: colors.primary,
     },
 
     lessonTitle: {
         width: 100,
-        backgroundColor: '#a286f0',
-        color: '#fff',
+        backgroundColor: colors.tertiary,
+        color: commonColors.white,
         marginLeft: 10,
         textAlign: 'center',
         borderRadius: 5,

@@ -6,7 +6,6 @@ import { RouteProp, StackActions, useRoute } from '@react-navigation/native';
 
 import { colors } from '../theme';
 import { LessonActions, LessonDescription, LessonOptions } from '../components';
-import { lessonsList } from '../../helpers/data';
 import { RootStackParams } from '../router';
 import { useNavigator, useStorage } from '../../hooks';
 import { resetOptions } from '../../helpers';
@@ -16,8 +15,7 @@ export const LessonScreen = () => {
     const { navigation } = useNavigator();
     const params = useRoute<RouteProp<RootStackParams, 'Lesson'>>().params;
     const lesson = params.lesson;
-
-    // TODO: REVISAR
+    const lessonList = params.lessonList;
 
     useEffect(() => {
         lesson.options = resetOptions( lesson.options );
@@ -43,7 +41,7 @@ export const LessonScreen = () => {
             showToast('Muy Bien! respuesta correcta');
             clearField('optionSelected');
 
-            if( params.step < 10 ) {
+            if( params.step < lessonList.length ) {
                 setTimeout( () => {
                     navigation.navigate('Lesson',
                         {
@@ -51,7 +49,8 @@ export const LessonScreen = () => {
                             name: params.name,
                             step: params.step + 1,
                             stepTitle: params.stepTitle,
-                            lesson: lessonsList[params.lessonId + 1],
+                            lesson: lessonList[params.lessonId + 1],
+                            lessonList,
                         });
                 }, 1700 );
 
@@ -65,7 +64,6 @@ export const LessonScreen = () => {
     };
 
     const onHelp = () => {
-
         showToast(`Tal vez la respuesta sea ${ lesson.correctAnswer.label }`);
     };
 

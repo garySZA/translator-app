@@ -1,7 +1,8 @@
-import { Lesson, Numbers } from '../../interfaces';
+import { Lesson, Data } from '../../interfaces';
+import { generateLesson } from './lessonGenerator';
 import { numbers, numbersSpanish } from './numbers';
 
-const lessonOneOptions: Numbers[] = [
+const lessonOneOptions: Data[] = [
     numbers[9],
     numbers[3],
     numbers[5],
@@ -10,7 +11,7 @@ const lessonOneOptions: Numbers[] = [
     numbers[2],
 ];
 
-export const lessonOneNumbers: Lesson = {
+const lessonOneNumbers: Lesson = {
     avatar: '10',
     title: 'Diez',
     options: [
@@ -29,7 +30,7 @@ export const lessonOneNumbers: Lesson = {
     status: 'empty',
 };
 
-const lessonTwoOptions: Numbers[] = [
+const lessonTwoOptions: Data[] = [
     numbers[0], // 0
     numbers[3], // 4
     numbers[6], // 6
@@ -38,7 +39,7 @@ const lessonTwoOptions: Numbers[] = [
     numbers[9], // 9
 ];
 
-export const lessonTwoNumbers: Lesson = {
+const lessonTwoNumbers: Lesson = {
     avatar: '4',
     title: 'Cuatro',
     options: [
@@ -57,7 +58,7 @@ export const lessonTwoNumbers: Lesson = {
     status: 'empty',
 };
 
-const lessonThreeOptions: Numbers[] = [
+const lessonThreeOptions: Data[] = [
     numbers[0], // 0
     numbers[4], // 4
     numbers[6], // 6
@@ -66,7 +67,7 @@ const lessonThreeOptions: Numbers[] = [
     numbers[9], // 9
 ];
 
-export const lessonThreeNumbers: Lesson = {
+const lessonThreeNumbers: Lesson = {
     avatar: '9',
     title: 'Nueve',
     options: [
@@ -79,13 +80,13 @@ export const lessonThreeNumbers: Lesson = {
     ],
     correctAnswer: {
         id: 8,
-        label: lessonThreeOptions[5].value,
+        label: lessonThreeOptions[4].value,
         selected: true,
     },
     status: 'empty',
 };
 
-const lessonFourOptions: Numbers[] = [
+const lessonFourOptions: Data[] = [
     numbers[0], // 0
     numbers[1], // 1
     numbers[4], // 4
@@ -94,7 +95,7 @@ const lessonFourOptions: Numbers[] = [
     numbers[8], // 8
 ];
 
-export const lessonFourNumbers: Lesson = {
+const lessonFourNumbers: Lesson = {
     avatar: '5',
     title: 'Cinco',
     options: [
@@ -113,7 +114,7 @@ export const lessonFourNumbers: Lesson = {
     status: 'empty',
 };
 
-const lessonFiveOptions: Numbers[] = [
+const lessonFiveOptions: Data[] = [
     numbersSpanish[6], // 0
     numbersSpanish[1], // 1
     numbersSpanish[4], // 4
@@ -122,7 +123,7 @@ const lessonFiveOptions: Numbers[] = [
     numbersSpanish[8], // 8
 ];
 
-export const lessonFiveNumbers: Lesson = {
+const lessonFiveNumbers: Lesson = {
     avatar: 'null',
     title: 'Qanchis',
     options: [
@@ -135,13 +136,13 @@ export const lessonFiveNumbers: Lesson = {
     ],
     correctAnswer: {
         id: 6,
-        label: lessonFiveOptions[2].value,
+        label: lessonFiveOptions[0].value,
         selected: true,
     },
     status: 'empty',
 };
 
-const lessonSixOptions: Numbers[] = [
+const lessonSixOptions: Data[] = [
     numbersSpanish[9], // 0
     numbersSpanish[1], // 1
     numbersSpanish[4], // 4
@@ -150,7 +151,7 @@ const lessonSixOptions: Numbers[] = [
     numbersSpanish[8], // 8
 ];
 
-export const lessonSixNumbers: Lesson = {
+const lessonSixNumbers: Lesson = {
     avatar: 'null',
     title: 'Huk',
     options: [
@@ -169,7 +170,7 @@ export const lessonSixNumbers: Lesson = {
     status: 'empty',
 };
 
-const lessonSevenOptions: Numbers[] = [
+const lessonSevenOptions: Data[] = [
     numbersSpanish[0], // 0
     numbersSpanish[1], // 1
     numbersSpanish[2], // 4
@@ -178,7 +179,7 @@ const lessonSevenOptions: Numbers[] = [
     numbersSpanish[3], // 8
 ];
 
-export const lessonSevenNumbers: Lesson = {
+const lessonSevenNumbers: Lesson = {
     avatar: 'null',
     title: 'Kimsa',
     options: [
@@ -197,7 +198,7 @@ export const lessonSevenNumbers: Lesson = {
     status: 'empty',
 };
 
-const lessonEightOptions: Numbers[] = [
+const lessonEightOptions: Data[] = [
     numbers[3], // 0
     numbers[7], // 1
     numbers[2], // 4
@@ -206,7 +207,7 @@ const lessonEightOptions: Numbers[] = [
     numbers[0], // 8
 ];
 
-export const lessonEightNumbers: Lesson = {
+const lessonEightNumbers: Lesson = {
     avatar: '8',
     title: 'Ocho',
     options: [
@@ -219,13 +220,13 @@ export const lessonEightNumbers: Lesson = {
     ],
     correctAnswer: {
         id: 7,
-        label: lessonEightOptions[2].value,
+        label: lessonEightOptions[1].value,
         selected: true,
     },
     status: 'empty',
 };
 
-const lessonNineOptions: Numbers[] = [
+const lessonNineOptions: Data[] = [
     numbersSpanish[9], // 0
     numbersSpanish[0], // 1
     numbersSpanish[7], // 4
@@ -234,7 +235,7 @@ const lessonNineOptions: Numbers[] = [
     numbersSpanish[3], // 8
 ];
 
-export const lessonNineNumbers: Lesson = {
+const lessonNineNumbers: Lesson = {
     avatar: 'null',
     title: 'Iskay',
     options: [
@@ -253,7 +254,7 @@ export const lessonNineNumbers: Lesson = {
     status: 'empty',
 };
 
-const lessonTenOptions: Numbers[] = [
+const lessonTenOptions: Data[] = [
     numbers[4], // 0
     numbers[0], // 1
     numbers[7], // 4
@@ -262,7 +263,7 @@ const lessonTenOptions: Numbers[] = [
     numbers[5], // 8
 ];
 
-export const lessonTenNumbers: Lesson = {
+const lessonTenNumbers: Lesson = {
     avatar: '6',
     title: 'Seis',
     options: [
@@ -282,7 +283,7 @@ export const lessonTenNumbers: Lesson = {
 };
 
 
-export const lessonsList: Lesson[] = [
+export const numbersLessonList: Lesson[] = [
     lessonOneNumbers, // number 10
     lessonTwoNumbers, // number 4
     lessonThreeNumbers, // number 9
@@ -293,4 +294,206 @@ export const lessonsList: Lesson[] = [
     lessonEightNumbers, // number 8
     lessonNineNumbers, // number 2
     lessonTenNumbers, // number 6
+];
+
+const lessonOneNumbersMidLevel: Lesson = {
+    avatar: '100',
+    title: 'Cien',
+    options: [
+        { id: 99, label: numbers[99].value, selected: false },
+        { id: 79, label: numbers[79].value, selected: false },
+        { id: 59, label: numbers[59].value, selected: false },
+        { id: 39, label: numbers[39].value, selected: false },
+    ],
+    correctAnswer: {
+        id: 99,
+        label: numbers[99].value,
+        selected: true,
+    },
+    status: 'empty',
+};
+
+const lessonTwoNumbersMidLevel: Lesson = {
+    avatar: '30',
+    title: 'Treinta',
+    options: [
+        { id: 89, label: numbers[89].value, selected: false },
+        { id: 79, label: numbers[79].value, selected: false },
+        { id: 29, label: numbers[29].value, selected: false },
+        { id: 59, label: numbers[59].value, selected: false },
+    ],
+    correctAnswer: {
+        id: 29,
+        label: numbers[29].value,
+        selected: true,
+    },
+    status: 'empty',
+};
+
+const lessonThreeNumbersMidLevel: Lesson = {
+    avatar: '70',
+    title: 'Setenta',
+    options: [
+        { id: 69, label: numbers[69].value, selected: false },
+        { id: 59, label: numbers[59].value, selected: false },
+        { id: 49, label: numbers[49].value, selected: false },
+        { id: 19, label: numbers[19].value, selected: false },
+    ],
+    correctAnswer: {
+        id: 69,
+        label: numbers[69].value,
+        selected: true,
+    },
+    status: 'empty',
+};
+
+const lessonFourNumbersMidLevel: Lesson = {
+    avatar: '50',
+    title: 'Cincuenta',
+    options: [
+        { id: 49, label: numbers[49].value, selected: false },
+        { id: 39, label: numbers[39].value, selected: false },
+        { id: 29, label: numbers[29].value, selected: false },
+        { id: 9, label: numbers[9].value, selected: false },
+    ],
+    correctAnswer: {
+        id: 49,
+        label: numbers[49].value,
+        selected: true,
+    },
+    status: 'empty',
+};
+
+const lessonFiveNumbersMidLevel: Lesson = {
+    avatar: '10',
+    title: 'Diez',
+    options: [
+        { id: 9, label: numbers[9].value, selected: false },
+        { id: 69, label: numbers[69].value, selected: false },
+        { id: 59, label: numbers[59].value, selected: false },
+        { id: 89, label: numbers[89].value, selected: false },
+    ],
+    correctAnswer: {
+        id: 9,
+        label: numbers[9].value,
+        selected: true,
+    },
+    status: 'empty',
+};
+
+const lessonSixNumbersMidLevel: Lesson = {
+    avatar: '60',
+    title: 'Sesenta',
+    options: [
+        { id: 29, label: numbers[29].value, selected: false },
+        { id: 69, label: numbers[69].value, selected: false },
+        { id: 59, label: numbers[59].value, selected: false },
+        { id: 89, label: numbers[89].value, selected: false },
+    ],
+    correctAnswer: {
+        id: 59,
+        label: numbers[59].value,
+        selected: true,
+    },
+    status: 'empty',
+};
+
+const lessonSevenNumbersMidLevel: Lesson = {
+    avatar: '20',
+    title: 'Veinte',
+    options: [
+        { id: 49, label: numbers[49].value, selected: false },
+        { id: 99, label: numbers[99].value, selected: false },
+        { id: 9, label: numbers[9].value, selected: false },
+        { id: 19, label: numbers[19].value, selected: false },
+    ],
+    correctAnswer: {
+        id: 19,
+        label: numbers[19].value,
+        selected: true,
+    },
+    status: 'empty',
+};
+
+const lessonEightNumbersMidLevel: Lesson = {
+    avatar: '80',
+    title: 'Ochenta',
+    options: [
+        { id: 39, label: numbers[39].value, selected: false },
+        { id: 79, label: numbers[79].value, selected: false },
+        { id: 29, label: numbers[29].value, selected: false },
+        { id: 59, label: numbers[59].value, selected: false },
+    ],
+    correctAnswer: {
+        id: 79,
+        label: numbers[79].value,
+        selected: true,
+    },
+    status: 'empty',
+};
+
+const lessonNineNumbersMidLevel: Lesson = {
+    avatar: '90',
+    title: 'Noventa',
+    options: [
+        { id: 49, label: numbers[49].value, selected: false },
+        { id: 89, label: numbers[89].value, selected: false },
+        { id: 39, label: numbers[39].value, selected: false },
+        { id: 69, label: numbers[69].value, selected: false },
+    ],
+    correctAnswer: {
+        id: 89,
+        label: numbers[89].value,
+        selected: true,
+    },
+    status: 'empty',
+};
+
+const lessonTenNumbersMidLevel: Lesson = {
+    avatar: '40',
+    title: 'Cuarenta',
+    options: [
+        { id: 99, label: numbers[99].value, selected: false },
+        { id: 39, label: numbers[39].value, selected: false },
+        { id: 79, label: numbers[79].value, selected: false },
+        { id: 69, label: numbers[69].value, selected: false },
+    ],
+    correctAnswer: {
+        id: 39,
+        label: numbers[39].value,
+        selected: true,
+    },
+    status: 'empty',
+};
+
+export const numbersLessonMidLevel: Lesson[] = [
+    lessonOneNumbersMidLevel, // number 100
+    lessonTwoNumbersMidLevel, // number 30
+    lessonThreeNumbersMidLevel, // number 70
+    lessonFourNumbersMidLevel, // number 50
+    lessonFiveNumbersMidLevel, // number 10
+    lessonSixNumbersMidLevel, // number 60
+    lessonSevenNumbersMidLevel, // number 20,
+    lessonEightNumbersMidLevel, // number 80,
+    lessonNineNumbersMidLevel, // number 90,
+    lessonTenNumbersMidLevel, // number 40,
+];
+
+const lessonOneHighLevel: Lesson = generateLesson('25', 'Veinticinco', [3,83,40,50,22,24], 24, numbers );
+
+const lessonTwoHighLevel: Lesson = generateLesson('35', 'Treinta y cinco', [18,88,45,34,27,29], 34, numbers );
+
+const lessonThreeHighLevel: Lesson = generateLesson('45', 'Cuarenta y cinco', [21,82,44,35,28,30], 44, numbers );
+
+const lessonFourHighLevel: Lesson = generateLesson('72', 'Setenta y dos', [71,87,46,36,31,33], 71, numbers );
+
+const lessonFiveHighLevel: Lesson = generateLesson('19', 'Diecinueve', [18,4,49,20,46], 18, numbers);
+
+export const numbersLessonHighLevel: Lesson[] = [
+    lessonOneHighLevel, // 25
+    lessonTwoHighLevel, // 35
+    lessonThreeHighLevel, // 45
+    lessonFourHighLevel, // 72
+    lessonFiveHighLevel, // 19
+
 ];

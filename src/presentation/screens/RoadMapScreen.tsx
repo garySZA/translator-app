@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native';
 import Timeline from 'react-native-timeline-flatlist';
 
 import { RoadMapRow } from '../components';
-import { lessonsList, roadmapList } from '../../helpers';
+import { roadmapList } from '../../helpers';
 import { useNavigator } from '../../hooks';
 import { colors } from '../theme';
 
@@ -24,14 +24,14 @@ export const RoadMapScreen = () => {
     const { navigation } = useNavigator();
 
     const handleClick = (data: any ) => {
-
         navigation.navigate('Lesson',
             {
                 lessonId: 0,
                 name: data.title,
                 step: 1,
                 stepTitle: 'El número 10',
-                lesson: lessonsList[0],
+                lesson: data.lessonList[0],
+                lessonList: data.lessonList,
             });
     };
 

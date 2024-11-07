@@ -9,7 +9,14 @@ import { Lesson } from '../../interfaces';
 
 export type RootStackParams = {
     Home: undefined,
-    Lesson: { lessonId: number, name: string, step: number, stepTitle: string, lesson: Lesson },
+    Lesson: {
+        lessonId: number,
+        name: string,
+        step: number,
+        stepTitle: string,
+        lesson: Lesson,
+        lessonList: Lesson[]
+    },
 }
 
 const Stack = createStackNavigator<RootStackParams>();

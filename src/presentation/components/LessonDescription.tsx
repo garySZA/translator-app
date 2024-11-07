@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     },
 
     lessonTitle: {
-        width: 100,
+        padding: 10,
         backgroundColor: colors.tertiary,
         color: commonColors.white,
         marginLeft: 10,

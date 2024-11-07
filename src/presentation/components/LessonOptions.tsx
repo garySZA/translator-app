@@ -9,8 +9,6 @@ interface Props {
 }
 
 export const LessonOptions = ({ optionsList }: Props) => {
-    // console.log(optionsList, 'nuevas opciones');
-
     const [options, setOptions] = useState(optionsList);
     const { storeData } = useStorage();
 

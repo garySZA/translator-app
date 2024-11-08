@@ -8,5 +8,8 @@
         <item name="android:windowSplashScreenBackground">@color/mybackground</item>
 
         <item name="android:windowSplashScreenAnimatedIcon">@drawable/launch_background</item>
+
+        <item name="android:windowSplashScreenAnimationDuration">5000</item>
+
     </style>
 </resources>

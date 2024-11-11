@@ -7,7 +7,7 @@ import { PaperProvider } from 'react-native-paper';
 import IonIcon from 'react-native-vector-icons/Ionicons';
 import { NavigationContainer } from '@react-navigation/native';
 
-import { StackNavigator } from './presentation/router';
+import { SideMenuNavigator } from './presentation/router';
 import { colors } from './presentation/theme';
 
 
@@ -25,7 +25,7 @@ export const App = () => {
             <SafeAreaView style={ styles.container }>
               {/* <CounterScreen /> */}
               {/* <LessonScreen /> */}
-              <StackNavigator />
+              <SideMenuNavigator />
             </SafeAreaView>
           </PaperProvider>
         </NavigationContainer>

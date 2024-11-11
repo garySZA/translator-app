@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { StyleSheet, ToastAndroid, View } from 'react-native';
 
-import { Text } from 'react-native-paper';
+import { ProgressBar, Text } from 'react-native-paper';
 import { RouteProp, StackActions, useRoute } from '@react-navigation/native';
 
 import { colors } from '../theme';
@@ -72,30 +72,33 @@ export const LessonScreen = () => {
     };
 
     return (
-        <View style={ styles.container }>
-            <Text
-                variant="headlineSmall"
-                style={ styles.lessonTitle }
-            >
-                Aprendiendo Números
-            </Text>
-            <View style={ styles.lessonDescription }>
-                <LessonDescription
-                    avatarLabel={ lesson.avatar }
-                    lessonTitle={ lesson.title }
-                />
+        <>
+            <ProgressBar progress={ params.step * 0.1 } color={ colors.primary } />
+            <View style={ styles.container }>
+                <Text
+                    variant="headlineSmall"
+                    style={ styles.lessonTitle }
+                >
+                    { params.name.split(' - ')[1] }
+                </Text>
+                <View style={ styles.lessonDescription }>
+                    <LessonDescription
+                        avatarLabel={ lesson.avatar }
+                        lessonTitle={ lesson.title }
+                    />
+                </View>
+                <View>
+                    <LessonOptions optionsList={ lesson.options } />
+                </View>
+                <View style={ styles.lessonActions }>
+                    <LessonActions
+                        onSubmit={ onSubmit }
+                        onHelp={ onHelp }
+                        onGoToHome={ onGoToHome }
+                    />
+                </View>
             </View>
-            <View>
-                <LessonOptions optionsList={ lesson.options } />
-            </View>
-            <View style={ styles.lessonActions }>
-                <LessonActions
-                    onSubmit={ onSubmit }
-                    onHelp={ onHelp }
-                    onGoToHome={ onGoToHome }
-                />
-            </View>
-        </View>
+        </>
     );
 };
 
@@ -126,5 +129,7 @@ const styles = StyleSheet.create({
         color: colors.textPrimary,
         fontWeight: 'bold',
         fontStyle: 'italic',
+        fontSize: 35,
+        textAlign: 'center',
     },
 });

@@ -26,10 +26,12 @@ export const StackNavigator = () =>  {
         <Stack.Navigator
             screenOptions={{
                 headerTintColor: colors.textPrimary,
+                headerShown: false,
             }}
         >
             <Stack.Screen
                 options={{ headerStyle: styles.headerStyle, headerTitleStyle: { color: colors.textPrimary } }}
+
                 name="Home"
                 component={ RoadMapScreen }
             />
@@ -47,4 +49,5 @@ const styles = StyleSheet.create({
         backgroundColor: colors.background,
         elevation: 0,
     },
+
 });

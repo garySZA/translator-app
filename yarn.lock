@@ -2490,7 +2490,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-navigation/drawer@npm:6.7.2":
+"@react-navigation/drawer@npm:^6.7.2":
   version: 6.7.2
   resolution: "@react-navigation/drawer@npm:6.7.2"
   dependencies:
@@ -8036,7 +8036,7 @@ __metadata:
     "@react-native/eslint-config": 0.75.4
     "@react-native/metro-config": 0.75.4
     "@react-native/typescript-config": 0.75.4
-    "@react-navigation/drawer": 6.7.2
+    "@react-navigation/drawer": ^6.7.2
     "@react-navigation/native": ^6.1.18
     "@react-navigation/stack": ^6.4.1
     "@types/react": ^18.2.6
@@ -8050,7 +8050,7 @@ __metadata:
     react-native: 0.75.4
     react-native-gesture-handler: ^2.20.2
     react-native-paper: ^5.12.5
-    react-native-reanimated: ^3.16.1
+    react-native-reanimated: 3.16.1
     react-native-safe-area-context: ^4.11.1
     react-native-screens: ^3.34.1
     react-native-timeline-flatlist: ^0.8.0
@@ -8091,7 +8091,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-reanimated@npm:^3.16.1":
+"react-native-reanimated@npm:3.16.1":
   version: 3.16.1
   resolution: "react-native-reanimated@npm:3.16.1"
   dependencies:

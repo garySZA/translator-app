@@ -1,13 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 
-import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
+import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentScrollView, DrawerItem, DrawerItemList } from '@react-navigation/drawer';
 import { Avatar, Divider } from 'react-native-paper';
 
 import { DataScreen } from '../screens';
 import { StackNavigator } from './StackNavigator';
 import { colors } from '../theme';
 import { IonIcon } from '../components/shared';
+import { foods, foodsEsp } from '../../helpers';
+import { useNavigator } from '../../hooks';
 
 const Drawer = createDrawerNavigator();
 
@@ -59,6 +61,8 @@ export const SideMenuNavigator = () => {
 };
 
 const CustomDrawerContent = ( props: DrawerContentComponentProps ) => {
+    const { navigation } = useNavigator();
+
     return (
         <DrawerContentScrollView>
             <View style={ styles.logoContainer }>
@@ -74,6 +78,14 @@ const CustomDrawerContent = ( props: DrawerContentComponentProps ) => {
 
 
             <DrawerItemList { ...props } />
+            <DrawerItem
+                activeBackgroundColor={ colors.primary }
+                activeTintColor="white"
+                inactiveTintColor={ colors.primary }
+                style={ styles.drawerItem }
+                label="Alimentos"
+                onPress={() => navigation.navigate('Data', { list: foods, listEsp: foodsEsp })}
+            />
         </DrawerContentScrollView>
     );
 };

@@ -2,10 +2,10 @@ import React from 'react';
 
 import { createStackNavigator } from '@react-navigation/stack';
 
-import { LessonScreen, RoadMapScreen } from '../screens';
+import { DataScreen, LessonScreen, RoadMapScreen } from '../screens';
 import { colors } from '../theme';
 import { StyleSheet } from 'react-native';
-import { Lesson } from '../../interfaces';
+import { Data, Lesson } from '../../interfaces';
 
 export type RootStackParams = {
     Home: undefined,
@@ -17,6 +17,11 @@ export type RootStackParams = {
         lesson: Lesson,
         lessonList: Lesson[]
     },
+
+    Data: {
+        list: Data[],
+        listEsp: Data[],
+    }
 }
 
 const Stack = createStackNavigator<RootStackParams>();
@@ -39,6 +44,12 @@ export const StackNavigator = () =>  {
                 options={{ headerStyle: styles.headerStyle, headerTitleStyle: { color: colors.textPrimary } }}
                 name="Lesson"
                 component={ LessonScreen }
+            />
+
+            <Stack.Screen
+                options={{ headerStyle: styles.headerStyle, headerTitleStyle: { color: colors.textPrimary } }}
+                name="Data"
+                component={ DataScreen }
             />
         </Stack.Navigator>
     );

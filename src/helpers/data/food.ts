@@ -18,3 +18,20 @@ export const foods: Data[] = [
     { key: '14', value: 'Miski Raqra' }, // Pan
 ];
 
+export const foodsEsp: Data[] = [
+    { key: '0', value: 'Papa' },
+    { key: '1', value: 'Maíz' },
+    { key: '2', value: 'Chicha' },
+    { key: '3', value: 'Chuño' },
+    { key: '4', value: 'Quinua' },
+    { key: '5', value: 'Carne' },
+    { key: '6', value: 'Agua' },
+    { key: '7', value: 'Dulce' },
+    { key: '8', value: 'Calabaza' },
+    { key: '9', value: 'Charqui' },
+    { key: '10', value: 'Ají' },
+    { key: '11', value: 'Granos germinados' },
+    { key: '12', value: 'Batata' },
+    { key: '13', value: 'Pescado seco' },
+    { key: '14', value: 'Pan' },
+];

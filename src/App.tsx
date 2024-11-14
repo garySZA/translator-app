@@ -4,7 +4,8 @@ import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
 import { PaperProvider } from 'react-native-paper';
 
-import IonIcon from 'react-native-vector-icons/Ionicons';
+import IonIcons from 'react-native-vector-icons/Ionicons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { NavigationContainer } from '@react-navigation/native';
 
 import { SideMenuNavigator } from './presentation/router';
@@ -12,7 +13,14 @@ import { colors } from './presentation/theme';
 
 
 
-const iconProvider = (props: React.ComponentProps<typeof IonIcon>) => <IonIcon { ...props }/>;
+const iconProvider = ({ name, ...props }: { name: string } & React.ComponentProps<typeof IonIcons>) => {
+  if (name.includes('-') || name.startsWith('menu')) {
+
+      return <MaterialCommunityIcons name={name} {...props} />;
+  }
+
+  return <IonIcons name={name} {...props} />;
+};
 
 export const App = () => {
     return (

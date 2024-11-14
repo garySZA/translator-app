@@ -73,7 +73,7 @@ export const LessonScreen = () => {
 
     return (
         <>
-            <ProgressBar progress={ params.step * 0.1 } color={ colors.primary } />
+            <ProgressBar progress={ (1 / lessonList.length) * (params.step - 1) } color={ colors.primary } />
             <View style={ styles.container }>
                 <Text
                     variant="headlineSmall"

@@ -36,6 +36,7 @@ local.properties
 *.hprof
 .cxx/
 *.keystore
+*.jks
 
 # node.js
 #

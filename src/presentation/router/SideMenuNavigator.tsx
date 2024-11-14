@@ -1,13 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 
-import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
+import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentScrollView,  DrawerItemList } from '@react-navigation/drawer';
 import { Avatar, Divider } from 'react-native-paper';
 
-import { DataScreen } from '../screens';
 import { StackNavigator } from './StackNavigator';
 import { colors } from '../theme';
 import { IonIcon } from '../components/shared';
+import { DictionaryNavigator } from './DictionaryNavigator';
 
 const Drawer = createDrawerNavigator();
 
@@ -16,7 +16,7 @@ export const SideMenuNavigator = () => {
 
     return (
         <Drawer.Navigator
-            drawerContent={ (props) => <CustomDrawerContent { ...props }/> }
+            drawerContent={ (props: DrawerContentComponentProps) => <CustomDrawerContent { ...props }/> }
             screenOptions={{
                 drawerType: ( dimensions.width >= 758 ) ? 'permanent' : 'slide',
                 headerShown: true,
@@ -35,30 +35,18 @@ export const SideMenuNavigator = () => {
                 component={ StackNavigator }
             />
             <Drawer.Screen
-                name="Animales"
-                component={ DataScreen }
-            />
-            <Drawer.Screen
-                name="Alimentos"
-                component={ DataScreen }
-            />
-            <Drawer.Screen
-                name="Colores"
-                component={ DataScreen }
-            />
-            <Drawer.Screen
-                name="Números"
-                component={ DataScreen }
-            />
-            <Drawer.Screen
-                name="Objetos del hogar"
-                component={ DataScreen }
+                options={{
+                    drawerIcon: ({ color }) => (<IonIcon name="library-outline" color={ color }/>)
+                }}
+                name="Diccionario"
+                component={ DictionaryNavigator }
             />
         </Drawer.Navigator>
     );
 };
 
 const CustomDrawerContent = ( props: DrawerContentComponentProps ) => {
+
     return (
         <DrawerContentScrollView>
             <View style={ styles.logoContainer }>

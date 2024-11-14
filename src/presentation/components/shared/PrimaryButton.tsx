@@ -6,12 +6,13 @@ interface Props {
     label: string;
     onPress: () => void;
     type: 'primary' | 'secondary' | 'tertiary';
+    width?: '25%' | '50%' | '75%' | '100%' | 'auto';
 }
 
-export const PrimaryButton = ({ label, onPress, type }: Props) => {
+export const PrimaryButton = ({ label, onPress, type, width = 'auto' }: Props) => {
     return (
         <Pressable
-            style={[ globalStyles.button, globalStyles[`${ type }Button`] ]}
+            style={[ globalStyles.button, globalStyles[`${ type }Button`], { width } ]}
             onPress={ () => onPress() }
         >
             <Text style={ globalStyles.buttonText } >{ label }</Text>

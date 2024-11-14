@@ -4,6 +4,8 @@ import { numbersLessonHighLevel, numbersLessonList, numbersLessonMidLevel } from
 import { animalsLesson } from './animalsLesson';
 import { foodsLesson } from './foodsLessons';
 import { householdItemsLesson } from './houseHoldItemsLesson';
+import { bodyLessonPartOne, bodyLessonPartTwo } from './bodyLesson';
+import { pronounsLesson } from './pronounsLesson';
 
 export const roadMap = [
     {time: '09:00', title: 'Event 1', description: 'Event 1 Description'},
@@ -48,5 +50,20 @@ export const roadmapList: RoadMap[] = [
         title: 'Reto 7 - Aprendiendo sobre alimentos',
         description: 'Podrás aprender acerca de algunos de los alimentos mas importantes para los seres humanos',
         lessonList: foodsLesson,
+    },
+    {
+        title: 'Reto 8 - Aprendiendo sobre el cuerpo humano',
+        description: 'Podrás aprender acerca de las partes mas importantes del cuerpo humano',
+        lessonList: bodyLessonPartOne,
+    },
+    {
+        title: 'Reto 9 - Más sobre el cuerpo humano',
+        description: 'Aprende más partes del cuerpo humano',
+        lessonList: bodyLessonPartTwo,
+    },
+    {
+        title: 'Reto 10 - Pronombres personales',
+        description: 'Aprende sobre los pronombres personales',
+        lessonList: pronounsLesson,
     },
 ];

@@ -76,7 +76,7 @@ export const globalStyles = StyleSheet.create({
     },
 
     buttonText: {
-        color: isDarkMode ? commonColors.white : colors.textPrimary,
+        color: commonColors.white,
         fontSize: 15,
     },
 

@@ -17,6 +17,7 @@ export type RootStackParams = {
         lesson: Lesson,
         lessonList: Lesson[]
     },
+    Dictionary: undefined,
 }
 
 const Stack = createStackNavigator<RootStackParams>();
@@ -35,6 +36,7 @@ export const StackNavigator = () =>  {
                 name="Home"
                 component={ RoadMapScreen }
             />
+
             <Stack.Screen
                 options={{ headerStyle: styles.headerStyle, headerTitleStyle: { color: colors.textPrimary } }}
                 name="Lesson"

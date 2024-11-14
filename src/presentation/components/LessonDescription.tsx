@@ -17,7 +17,7 @@ export const LessonDescription = ({ avatarLabel, lessonTitle }: Props) => {
                 ? (
                     <Avatar.Icon
                         size={ 90 }
-                        icon="help-outline"
+                        icon="help"
                         style={ styles.lessonAvatar }
                         color={ commonColors.white }
                     />

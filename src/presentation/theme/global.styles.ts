@@ -80,6 +80,11 @@ export const globalStyles = StyleSheet.create({
         fontSize: 15,
     },
 
+    tertiaryButtonText: {
+        color: globalColorsDark.primary,
+        fontSize: 15,
+    },
+
     fab: {
         position: 'absolute',
         margin: 16,

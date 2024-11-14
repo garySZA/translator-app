@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 
-import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentScrollView,  DrawerItemList } from '@react-navigation/drawer';
+import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
 import { Avatar, Divider } from 'react-native-paper';
 
 import { StackNavigator } from './StackNavigator';

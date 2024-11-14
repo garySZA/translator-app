@@ -15,7 +15,7 @@ export const PrimaryButton = ({ label, onPress, type, width = 'auto' }: Props) =
             style={[ globalStyles.button, globalStyles[`${ type }Button`], { width } ]}
             onPress={ () => onPress() }
         >
-            <Text style={ globalStyles.buttonText } >{ label }</Text>
+            <Text style={ type === 'tertiary' ? globalStyles.tertiaryButtonText : globalStyles.buttonText } >{ label }</Text>
         </Pressable>
     );
 };

@@ -12,7 +12,7 @@ import { resetOptions } from '../../helpers';
 
 export const LessonScreen = () => {
     const { getData, clearField } = useStorage();
-    const { navigation } = useNavigator();
+    const { navigation } = useNavigator<RootStackParams>();
     const params = useRoute<RouteProp<RootStackParams, 'Lesson'>>().params;
     const lesson = params.lesson;
     const lessonList = params.lessonList;

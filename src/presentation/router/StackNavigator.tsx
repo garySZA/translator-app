@@ -2,7 +2,7 @@ import React from 'react';
 
 import { createStackNavigator } from '@react-navigation/stack';
 
-import { LessonScreen, RoadMapScreen } from '../screens';
+import { DataScreen, LessonScreen, RoadMapScreen } from '../screens';
 import { colors } from '../theme';
 import { StyleSheet } from 'react-native';
 import { Lesson } from '../../interfaces';
@@ -41,6 +41,12 @@ export const StackNavigator = () =>  {
                 options={{ headerStyle: styles.headerStyle, headerTitleStyle: { color: colors.textPrimary } }}
                 name="Lesson"
                 component={ LessonScreen }
+            />
+
+            <Stack.Screen
+                options={{ headerStyle: styles.headerStyle, headerTitleStyle: { color: colors.textPrimary } }}
+                name="Dictionary"
+                component={ DataScreen }
             />
         </Stack.Navigator>
     );
